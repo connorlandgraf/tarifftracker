@@ -8,16 +8,37 @@
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+          
         }
         input {
-            width: 100%;
-            padding: 10px;
+            width: 96%;
+            max-width: 96%;
+            padding: 12px;
             margin-bottom: 10px;
-            font-size: 16px;
+            font-size: 20px;
+            background-color: white;
+            color: black;
+            border: 1px solid rgba(2, 136, 209, 0.8);
+            outline: none;
+            display: block;
+            border-radius: 8px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+
         }
         th, td {
             border: 1px solid #ddd;
@@ -26,6 +47,16 @@
         }
         th {
             background-color: #f4f4f4;
+        }
+        @media (max-width: 600px) {
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
+            input {
+                font-size: 18px;
+                padding: 10px;
+            }
         }
     </style>
     <script>
@@ -52,24 +83,25 @@
     </script>
 </head>
 <body>
-    <h2>Country Tariff Table</h2>
-    <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for country or tariff...">
-    
-    <table id="tariffTable">
-        <tr>
-            <th>Country</th>
-            <th>Tariff</th>
-        </tr>
-        <tr><td>USA</td><td>5%</td></tr>
-        <tr><td>Canada</td><td>7%</td></tr>
-        <tr><td>Germany</td><td>10%</td></tr>
-        <tr><td>France</td><td>8%</td></tr>
-        <tr><td>Japan</td><td>12%</td></tr>
-        <tr><td>China</td><td>15%</td></tr>
-        <tr><td>India</td><td>18%</td></tr>
-        <tr><td>Brazil</td><td>20%</td></tr>
-        <tr><td>UK</td><td>6%</td></tr>
-        <tr><td>Australia</td><td>9%</td></tr>
-    </table>
+    <h1>Tariff Tracker</h1>
+    <div class="container">
+        <input type="text" id="search" onkeyup="searchTable()" placeholder="Search for country or tariff...">
+        <table id="tariffTable">
+            <tr>
+                <th>Country</th>
+                <th>Tariff</th>
+            </tr>
+            <tr><td>USA</td><td>5%</td></tr>
+            <tr><td>Canada</td><td>7%</td></tr>
+            <tr><td>Germany</td><td>10%</td></tr>
+            <tr><td>France</td><td>8%</td></tr>
+            <tr><td>Japan</td><td>12%</td></tr>
+            <tr><td>China</td><td>15%</td></tr>
+            <tr><td>India</td><td>18%</td></tr>
+            <tr><td>Brazil</td><td>20%</td></tr>
+            <tr><td>UK</td><td>6%</td></tr>
+            <tr><td>Australia</td><td>9%</td></tr>
+        </table>
+    </div>
 </body>
 </html>
